@@ -1,0 +1,14 @@
+set clipboard=unnamed
+set cursorline
+set number
+set wildmenu
+set smartcase
+set noswf
+set noshowmode
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set backspace=indent,eol,start
+set splitbelow
+set splitright
+syntax enable
