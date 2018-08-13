@@ -7,7 +7,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf.vim'
 Plugin 'posva/vim-vue'
 Plugin 'pangloss/vim-javascript'
 Plugin 'crusoexia/vim-javascript-lib'
@@ -39,6 +38,9 @@ set fileencoding=utf-8
 noremap <C-s> :w<CR>
 noremap <C-s> <Esc>:w<CR>a
 
+" set the fuzzy search shortcut
+" noremap ; :Files<CR>
+
 syntax enable
 
 " Abrir nerdtree on default vim command
@@ -50,5 +52,4 @@ let g:user_emmet_leader_key='\'
 
 " javascript vim
 let g:javascript_plugin_flow = 1
-
 
