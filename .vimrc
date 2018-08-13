@@ -7,6 +7,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'junegunn/fzf.vim'
 Plugin 'posva/vim-vue'
 Plugin 'pangloss/vim-javascript'
 Plugin 'crusoexia/vim-javascript-lib'
