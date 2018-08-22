@@ -1,4 +1,4 @@
-" Configura§cao do Vundle
+" ConfiguraÂ§cao do Vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -34,12 +34,13 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " set the save mode on ctrl + s on normal and insert mode
-noremap <C-s> :w<CR>
-noremap <C-s> <Esc>:w<CR>a
+nnoremap <C-s> :w<cr>
+inoremap <C-s> <esc>:w<cr>a
+
 
 " set the save and exit mode on ctrl + x
-noremap <C-x> :x<CR>
-noremap <C-x> <Esc>:x<CR>a
+nnoremap <C-x> :x<cr>
+inoremap <C-x> <esc>:x<cr>a
 
 syntax enable
 
