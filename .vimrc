@@ -3,9 +3,14 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
+" before set this you have to install fzf by homebrew
+set rtp+=/usr/local/opt/fzf
+
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'junegunn/fzf.vim'
+Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'posva/vim-vue'
 Plugin 'pangloss/vim-javascript'
@@ -30,7 +35,7 @@ set backspace=indent,eol,start
 set splitbelow
 set splitright
 " The line below set the option to open and close folders on vim
-set encoding=utf-8
+set encoding=utf8
 set fileencoding=utf-8
 
 " set the save mode on ctrl + s on normal and insert mode
@@ -41,6 +46,18 @@ inoremap <C-s> <esc>:w<cr>a
 " set the save and exit mode on ctrl + x
 nnoremap <C-x> :x<cr>
 inoremap <C-x> <esc>:x<cr>a
+
+" set the fuzzySearch on ';' key
+nnoremap ; :Files<CR>
+
+" config the lightline plugin
+let g:lightline = {
+  \     'active': {
+  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+  \     }
+  \ }
+
 
 syntax enable
 
