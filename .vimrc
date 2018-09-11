@@ -14,6 +14,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'posva/vim-vue'
 Plugin 'pangloss/vim-javascript'
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
 Plugin 'hail2u/vim-css3-syntax'
@@ -35,12 +36,12 @@ set backspace=indent,eol,start
 set splitbelow
 set splitright
 " The line below set the option to open and close folders on vim
-set encoding=utf8
+set encoding=utf-8
 set fileencoding=utf-8
 
 " set the save mode on ctrl + s on normal and insert mode
 nnoremap <C-s> :w<cr>
-inoremap <C-s> <esc>:w<cr>a
+inoremap <C-s> <esc>:w<cr>
 
 
 " set the save and exit mode on ctrl + x
@@ -57,6 +58,9 @@ let g:lightline = {
   \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
   \     }
   \ }
+
+" show hidden files on NERDTree
+let NERDTreeShowHidden=1
 
 
 syntax enable
