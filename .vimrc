@@ -59,6 +59,12 @@ nnoremap <space> :NERDTreeToggle %<CR>
 " set the fuzzySearch on ';' key
 nnoremap ; :Files<CR>
 
+" set the navigation between screens only on crtl + direction, removing thw `w` key
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " config the lightline plugin
 let g:lightline = {
   \     'active': {
