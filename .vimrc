@@ -48,6 +48,9 @@ inoremap <C-s> <esc>:w<cr>
 nnoremap <C-x> :x<cr>
 inoremap <C-x> <esc>:x<cr>a
 
+" set the nerdtree toogle on space key
+nnoremap <space> :NERDTreeToggle %<CR>
+
 " set the fuzzySearch on ';' key
 nnoremap ; :Files<CR>
 
