@@ -49,6 +49,10 @@ inoremap <C-s> <esc>:w<cr>
 nnoremap <C-x> :x<cr>
 inoremap <C-x> <esc>:x<cr>a
 
+" set quit button on ctrl + q
+nnoremap <C-q> :q<cr>
+inoremap <C-q> :q!<cr>
+
 " set the nerdtree toogle on space key
 nnoremap <space> :NERDTreeToggle %<CR>
 
