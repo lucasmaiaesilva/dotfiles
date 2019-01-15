@@ -2,25 +2,28 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim
-" before set this you have to install fzf by homebrew
+""plug.vim
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'VundleVim/Vundle.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-scripts/auto-pairs-gentle'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'posva/vim-vue'
+Plug 'pangloss/vim-javascript'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'tomasr/molokai'
+
+call plug#end()
+
 set rtp+=/usr/local/opt/fzf
-
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'auto-pairs-gentle'
-Plugin 'itchyny/lightline.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'posva/vim-vue'
-Plugin 'pangloss/vim-javascript'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'mattn/emmet-vim'
-Plugin 'hail2u/vim-css3-syntax'
-
-call vundle#end()            " required
+map <C-p> :FZF<CR>
 filetype plugin indent on    " 
 
 set clipboard=unnamed
@@ -36,13 +39,19 @@ set shiftwidth=2
 set backspace=indent,eol,start
 set splitbelow
 set splitright
+set ma
 " The line below set the option to open and close folders on vim
 set encoding=utf-8
 set fileencoding=utf-8
 
+" slow way of never break syntax highlight from vue files
+autocmd FileType vue syntax sync fromstart
+
+colorscheme molokai
+
 " set the save mode on ctrl + s on normal and insert mode
 nnoremap <C-s> :w<cr>
-inoremap <C-s> <esc>:w<cr>
+inoremap <C-s> <Esc>:w<cr>
 
 
 " set the save and exit mode on ctrl + x
