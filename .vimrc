@@ -40,6 +40,7 @@ set backspace=indent,eol,start
 set splitbelow
 set splitright
 set ma
+set wildignore=node_modules/**/*
 " The line below set the option to open and close folders on vim
 set encoding=utf-8
 set fileencoding=utf-8
@@ -56,7 +57,16 @@ inoremap <C-s> <Esc>:w<cr>
 
 " set the save and exit mode on ctrl + x
 nnoremap <C-x> :x<cr>
-inoremap <C-x> <esc>:x<cr>a
+inoremap <C-x> <esc>:x<cr>
+
+" set move lines
+" option J and option K
+" on windows change to <ALT-j> and <ALT-k>
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
 
 " set quit button on ctrl + q
 nnoremap <C-q> :q<cr>
