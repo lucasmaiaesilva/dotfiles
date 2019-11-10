@@ -12,15 +12,56 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'posva/vim-vue'
-Plug 'pangloss/vim-javascript'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
-Plug 'hail2u/vim-css3-syntax'
 Plug 'tomasr/molokai'
+Plug 'bronson/vim-trailing-whitespace'
+
+" HTML
+Plug 'othree/html5.vim'
+Plug 'mattn/emmet-vim'
+Plug 'valloric/matchtagalways'
+
+" VUE
+Plug 'posva/vim-vue'
+
+" CSS
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'wavded/vim-stylus'
+Plug 'groenewege/vim-less'
+Plug 'ap/vim-css-color'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+" JavaScript
+Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'gavocanov/vim-js-indent'
+
+" TypeScript
+Plug 'Quramy/tsuquyomi'
+Plug 'ianks/vim-tsx'
+" Plug 'leafgarland/typescript-vim'
+
+" JSX
+Plug 'maxmellon/vim-jsx-pretty'
+
+" Git
+" Plug 'tpope/vim-fugitive'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'junegunn/gv.vim'
 
 call plug#end()
+
+" Git
+" noremap <Leader>ga :Git add -- .<CR><CR>
+" noremap <Leader>gc :Gcommit<CR>
+" noremap <Leader>gw :Gwrite<CR>
+" noremap <Leader>gsh :Gpush<CR>
+" noremap <Leader>gll :Gpull<CR>
+" noremap <Leader>gs :Gstatus<CR>
+" noremap <Leader>gb :Gblame<CR>
+" noremap <Leader>gd :Gvdiff<CR>
+" noremap <Leader>gr :Gremove<CR>
 
 set rtp+=/usr/local/opt/fzf
 map <C-p> :FZF<CR>
@@ -53,7 +94,6 @@ colorscheme molokai
 " set the save mode on ctrl + s on normal and insert mode
 nnoremap <C-s> :w<cr>
 inoremap <C-s> <Esc>:w<cr>
-
 
 " set the save and exit mode on ctrl + x
 nnoremap <C-x> :x<cr>
@@ -95,9 +135,11 @@ let g:lightline = {
 " show hidden files on NERDTree
 let NERDTreeShowHidden=1
 
-
 syntax enable
 
 " Abrir nerdtree on default vim command
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"force syntax to aways be nice, danger zone 'cause it can be slow
+autocmd BufEnter * :syntax sync fromstart
