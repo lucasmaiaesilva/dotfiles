@@ -39,8 +39,8 @@ Plug 'gavocanov/vim-js-indent'
 
 " TypeScript
 Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
-" Plug 'leafgarland/typescript-vim'
 
 " JSX
 Plug 'maxmellon/vim-jsx-pretty'
