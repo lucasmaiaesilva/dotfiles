@@ -86,6 +86,9 @@ set wildignore=node_modules/**/*
 set encoding=utf-8
 set fileencoding=utf-8
 
+" Reverse color of selection on visual Mode
+hi Visual term=reverse cterm=reverse guibg=Grey
+
 " slow way of never break syntax highlight from vue files
 autocmd FileType vue syntax sync fromstart
 
@@ -136,6 +139,7 @@ let g:lightline = {
 let NERDTreeShowHidden=1
 
 syntax enable
+highlight Visual term=reverse cterm=reverse guibg=Grey
 
 " Abrir nerdtree on default vim command
 autocmd StdinReadPre * let s:std_in=1
