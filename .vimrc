@@ -6,6 +6,9 @@ filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
 
+" Star Wars Plugin
+"Plug 'shinokada/swtc.vim'
+
 Plug 'VundleVim/Vundle.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -15,6 +18,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'tomasr/molokai'
 Plug 'bronson/vim-trailing-whitespace'
+
+" Syntax
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
 
 " HTML
 Plug 'othree/html5.vim'
@@ -126,6 +133,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+nnoremap ; :
+nnoremap : ;
 
 " config the lightline plugin
 let g:lightline = {
