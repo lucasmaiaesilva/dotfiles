@@ -74,7 +74,13 @@ set rtp+=/usr/local/opt/fzf
 map <C-p> :FZF<CR>
 filetype plugin indent on    " 
 
-set clipboard=unnamed
+" echo has("clipboard") // if result is 0 on Ubuntu it means some packages are
+" required as vim-gnome. vim-athena, vim-gtx
+set clipboard=unnamedplus
+
+" For Mac
+" set clipboard=unnamed
+
 set cursorline
 set number
 set wildmenu
