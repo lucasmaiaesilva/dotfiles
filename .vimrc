@@ -53,9 +53,12 @@ Plug 'ianks/vim-tsx'
 Plug 'maxmellon/vim-jsx-pretty'
 
 " Git
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
 " Plug 'junegunn/gv.vim'
+
+" AutoComplete
+Plug 'valloric/youcompleteme'
 
 call plug#end()
 
@@ -137,13 +140,25 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap ; :
 nnoremap : ;
 
+" you complete me config, to use in other computer
+" cd ~/.vim/plugged/youcompleteme
+" ./install.py --all
+let g:ycm_use_clangd = 0
+
 " config the lightline plugin
 let g:lightline = {
-  \     'active': {
-  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
-  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
-  \     }
-  \ }
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ ['lineinfo'],
+      \              ['percent'],
+      \              ['fileformat', 'fileencoding'] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 " show hidden files on NERDTree
 let NERDTreeShowHidden=1
