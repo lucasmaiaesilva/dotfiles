@@ -16,7 +16,9 @@ Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
 Plug 'bronson/vim-trailing-whitespace'
 
 " Syntax
@@ -102,7 +104,8 @@ hi Visual term=reverse cterm=reverse guibg=Grey
 " slow way of never break syntax highlight from vue files
 autocmd FileType vue syntax sync fromstart
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme dracula
 
 " set the save mode on ctrl + s on normal and insert mode
 nnoremap <C-s> :w<cr>
