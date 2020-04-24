@@ -10,13 +10,15 @@ call plug#begin('~/.vim/plugged')
 "Plug 'shinokada/swtc.vim'
 
 Plug 'VundleVim/Vundle.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'tomasr/molokai'
+" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
 Plug 'bronson/vim-trailing-whitespace'
 
 " Syntax
@@ -29,7 +31,7 @@ Plug 'mattn/emmet-vim'
 Plug 'valloric/matchtagalways'
 
 " VUE
-Plug 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 
 " CSS
 Plug 'hail2u/vim-css3-syntax'
@@ -58,7 +60,13 @@ Plug 'tpope/vim-fugitive'
 " Plug 'junegunn/gv.vim'
 
 " AutoComplete
-Plug 'valloric/youcompleteme'
+" Plug 'valloric/youcompleteme'
+
+" Python
+Plug 'vim-python/python-syntax'
+
+" Comment
+Plug 'tomtom/tcomment_vim'
 
 call plug#end()
 
@@ -73,8 +81,8 @@ call plug#end()
 " noremap <Leader>gd :Gvdiff<CR>
 " noremap <Leader>gr :Gremove<CR>
 
-set rtp+=/usr/local/opt/fzf
-map <C-p> :FZF<CR>
+" set rtp+=/usr/local/opt/fzf
+" map <C-p> :FZF<CR>
 filetype plugin indent on    " 
 
 set clipboard=unnamed
@@ -103,6 +111,7 @@ hi Visual term=reverse cterm=reverse guibg=Grey
 autocmd FileType vue syntax sync fromstart
 
 colorscheme molokai
+" colorscheme dracula
 
 " set the save mode on ctrl + s on normal and insert mode
 nnoremap <C-s> :w<cr>
@@ -131,13 +140,15 @@ nnoremap <space> :NERDTreeToggle %<CR>
 " set the fuzzySearch on ';' key
 nnoremap ; :Files<CR>
 
+" tComment
+nnoremap <C-c> :TComment<cr>
+vnoremap <C-c> :TComment<cr>
+
 " set the navigation between screens only on crtl + direction, removing thw `w` key
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-let g:user_emmet_expandabbr_key = '<S-tab>'
 
 nnoremap ; :
 nnoremap : ;
